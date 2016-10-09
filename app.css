@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Helvetica', sans-serif;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.column-left {
+  float: left;
+  width: 77vw;
+}
+
+.column-right {
+  float: right;
+  position: absolute;
+  right: 0;
+  width: 20vw;
+  height: 100%;
+}
+
+.aminoedit-pane {
+  width: 85vw;
+  height: 474px;
+  background-color: #e9e2cb;
+  position: absolute;
+  padding-top: 5px;
+  
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 0.5%;
+}
+
+.editor-dnaContainer, .editor-rnaContainer {
+  display: flex;
+  font-family: 'Courier', monospace;
+  float: left;
+  padding-left: 20px;
+}
+
+.editor-dnaContainer:before, .editor-rnaContainer:before {
+  font-family: 'Helvetica', sans-serif;
+  padding-top: 20px;
+  opacity: .3;
+}
+
+.editor-dnaContainer:before {
+  content: 'DNA';
+}
+
+.editor-rnaContainer:before {
+  content: 'RNA';
+}
+
+.editor-dnaNucleotide, .editor-rnaNucleotide {
+  flex: 0 1 auto;
+  font-size: 2rem;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 6px 10px;
+  padding: 0px 2px;
+  z-index: 5;
+}
+
+.editor-dnaNucleotide {
+  background-color: #fcf4dc;
+  border-color: #fcf4dc;
+  color: #2196f3;
+}
+
+.editor-dnaNucleotide.mutable {
+  background-color: #bfe099;
+  border-color: #bfe099;
+}
+
+.editor-rnaNucleotide {
+  background-color: #fcf4dc;
+  border-color: #fcf4dc;
+  color: #f44336;
+}
+
+.nucleotideCycle {
+  font-size: 12px;
+  position: absolute;
+  margin-top: -32px;
+  margin-left: 25px;
+  color: #ababab;
+  cursor: pointer;
+}
+
+.nucleotideCycle.down {
+  margin-top: -15px;
+}
+
+.nucleotideCycle.up:before {
+  content: '\2B06 \FE0E ';
+}
+
+.nucleotideCycle.down:before {
+  content: '\2B07 \FE0E ';
+}
+
+.editor-rnaAminoLabel {
+  position: absolute;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5rem;
+  background-color: #ffeb3b;
+  border-color: #ffeb3b;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 5px;
+  margin-top: 60px;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.editor-rnaAminoBars {
+  position: absolute;
+  border-style: solid;
+  border-color: #fff495;
+  border-width: 10px;
+  border-radius: 10px;
+  border-top-style: none;
+  width: 90px;
+  height: 60px;
+  margin-top: 15px;
+  margin-left: -31px;
+}
+
+.proteinindicator-overlay {
+  position: absolute;
+  right: 0;
+  height: 400px;
+  width: 300px;
+}
+
+.proteinindicator-description {
+  position: absolute;
+  display: none;
+  margin-top: 40px;
+  width: 100%;
+  font-family: 'Helvetica', sans-serif;
+  font-size: .9rem;
+}
+
+.proteinindicator-description:before {
+  content: 'That base pair sequence produces...';
+  position: absolute;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: -45px;
+}
+
+.proteinindicator-description:after {
+  content: '(highlighted above)';
+  position: absolute;
+  font-style: italic;
+  margin-top: 20px;
+  left: 0;
+}
+
+.cellanimation-pane {
+  height: 77vh;
+}
+
+.proteininject-button {
+  position: absolute;
+  background-color: #3f51b5;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 98%;
+  height: 23vh;
+  bottom: 0;
+}
+
+.proteininject-button:before {
+  position: absolute;
+  content: 'Inject Oncovirus';
+  text-align: center;
+  margin: auto 13%;
+  margin-top: 10%;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.proteininject-button:active {
+  background-color: #0288d1;
+}
+
+.directions-pane {
+  position: absolute;
+  display: none;
+  width: 100%;
+  right: 0;
+  z-index: 50;
+  background-color: #fcf4dc;
+  border-style: solid;
+  border-color: #fcf4dc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.directions-pane p {
+  white-space: pre-wrap;
+  padding: 10px;
+}
+
+.directions-next {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.directions-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
